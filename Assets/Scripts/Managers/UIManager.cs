@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-	public static UIManager Instance
+    #region Singleton
+    public static UIManager Instance
 	{
 		get 
 		{
@@ -18,6 +20,9 @@ public class UIManager : MonoBehaviour
 	}
 
 	private static UIManager _instance;
+    #endregion
+
+    public event Action EventBetPressed;
 
 	[SerializeField]
 	private Text _currentBalanceText = null;
@@ -34,6 +39,16 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private CardsScriptableObject _cardsSO;
 
+    private void OnEnable()
+    {
+        _betButton.onClick.AddListener(OnBetButtonPressed);
+    }
+
+    private void OnDisable()
+    {
+        _betButton.onClick.RemoveListener(OnBetButtonPressed);
+    }
+
     private void Awake()
     {
 		if (_instance == null)
@@ -49,9 +64,7 @@ public class UIManager : MonoBehaviour
 
     void Start()
 	{
-		_betButton.onClick.AddListener(OnBetButtonPressed);
 		_currentBalanceText.text = $"Balance: {GameManager.Instance.CurrentCredit} Credits";
-
     }
 
 	public void SetupHand(List<CardInfo> cardInfos)
@@ -64,6 +77,6 @@ public class UIManager : MonoBehaviour
 
 	private void OnBetButtonPressed()
 	{
-
-	}
+		EventBetPressed?.Invoke();
+    }
 }

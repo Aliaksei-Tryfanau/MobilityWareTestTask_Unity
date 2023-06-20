@@ -5,7 +5,8 @@ using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
-	public static GameManager Instance
+    #region Singleton
+    public static GameManager Instance
 	{
 		get 
 		{
@@ -19,34 +20,47 @@ public class GameManager : MonoBehaviour
 	}
 
 	private static GameManager _instance;
+    #endregion
 
-	[SerializeField]
+    [SerializeField]
 	private int _startingCredit = 100;
 
+	[SerializeField]
+	private HandCombinationsRewardsScriptable _combinationsRewardsSO;
+
 	public int CurrentCredit { get; private set; }
+	public List<CardInfo> CurrentHand { get; private set; } = new List<CardInfo>();
 
 	private List<CardInfo> _cardDeck = new List<CardInfo>();
+	private int _currentBet = 0;
+
+    private void OnEnable()
+    {
+		UIManager.Instance.EventBetPressed += OnBetPressed;
+    }
+
+    private void OnDisable()
+    {
+        UIManager.Instance.EventBetPressed -= OnBetPressed;
+    }
 
     private void Awake()
     {
         if (_instance == null)
         {
             _instance = this;
+            CurrentCredit = _startingCredit;
             DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
-			return;
         }
-
-        CurrentCredit = _startingCredit;
     }
 
     private void Start()
 	{
 		GenerateCardDeck();
-		DealCards();
     }
 
 	private void GenerateCardDeck()
@@ -72,17 +86,44 @@ public class GameManager : MonoBehaviour
 		}
     }
 
-	private void DealCards()
+	private void DrawCards()
 	{
-		List<CardInfo> cardsToDeal = new List<CardInfo>();
+        CurrentHand.Clear();
 
-		for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 5; i++)
 		{
 			CardInfo cardToAdd = _cardDeck[Random.Range(0, _cardDeck.Count)];
             _cardDeck.Remove(cardToAdd);
-            cardsToDeal.Add(cardToAdd);
+            CurrentHand.Add(cardToAdd);
         }
 
-		UIManager.Instance.SetupHand(cardsToDeal);
+		UIManager.Instance.SetupHand(CurrentHand);
+	}
+
+	private void OnBetPressed()
+	{
+		_currentBet++;
+		CurrentCredit--;
+
+		if (_currentBet == 5)
+		{
+            OnDrawPressed();
+		}
+    }
+
+	private void OnDrawPressed()
+	{
+		if (CurrentHand.Count == 0)
+		{
+			DrawCards();
+		}
+		else if (true) //check if have hold cards
+		{
+
+		}
+		else
+		{
+			//check win
+		}
 	}
 }

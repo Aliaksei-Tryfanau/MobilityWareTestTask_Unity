@@ -9,7 +9,7 @@ public struct CardScriptableInfo
     public Sprite CardSprite;
 }
 
-[CreateAssetMenu(fileName = "CardsSO", menuName = "Create Cards SO")]
+[CreateAssetMenu(fileName = "CardsSO", menuName = "Cards/Create Cards SO")]
 public class CardsScriptableObject : ScriptableObject
 {
     public List<CardScriptableInfo> cardInfos;
