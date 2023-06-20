@@ -15,19 +15,28 @@ MonoBehaviour:
   Rewards:
   - HandType: 1
     Reward: 1
+    RewardText: Jacks or Better
   - HandType: 2
     Reward: 2
+    RewardText: Two Pair
   - HandType: 3
     Reward: 3
+    RewardText: Three of a Kind
   - HandType: 4
     Reward: 4
+    RewardText: Straight
   - HandType: 5
     Reward: 6
+    RewardText: Flush
   - HandType: 6
     Reward: 9
+    RewardText: Full House
   - HandType: 7
     Reward: 25
+    RewardText: Four of a Kind
   - HandType: 8
     Reward: 50
+    RewardText: Straight Flush
   - HandType: 9
     Reward: 800
+    RewardText: Royal Flush

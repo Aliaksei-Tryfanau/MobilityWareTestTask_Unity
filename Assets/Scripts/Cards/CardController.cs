@@ -2,21 +2,10 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-[Serializable]
-public struct CardInfo
-{
-    public CardSuits CardSuit;
-    public CardTypes CardType;
-
-    public CardInfo(CardSuits cardSuit, CardTypes cardType)
-    {
-        CardSuit = cardSuit;
-        CardType = cardType;
-    }
-}
-
 public class CardController : MonoBehaviour
 {
+    public event Action<CardController> EventCardButtonClick;
+
     [SerializeField]
     private Image _cardImage;
     [SerializeField]
@@ -24,7 +13,6 @@ public class CardController : MonoBehaviour
     [SerializeField]
     private GameObject _holdGO;
 
-    public CardInfo CardInfo { get; private set; }
     public bool IsHold => _holdGO.activeSelf;
 
     private void OnEnable()
@@ -43,15 +31,21 @@ public class CardController : MonoBehaviour
         _cardImage.sprite = null;
     }
 
-    public void Setup(CardInfo cardInfo, Sprite cardSprite) 
+    public void Setup(Sprite cardSprite) 
     {
-        CardInfo = cardInfo;
         _cardImage.sprite = cardSprite;
         _button.enabled = true;
+    }
+
+    public void Reset()
+    {
+        _holdGO.SetActive(false);
+        _button.enabled = false;
     }
 
     private void OnCardButtonClick()
     {
         _holdGO.SetActive(!_holdGO.activeSelf);
+        EventCardButtonClick?.Invoke(this);
     }
 }
