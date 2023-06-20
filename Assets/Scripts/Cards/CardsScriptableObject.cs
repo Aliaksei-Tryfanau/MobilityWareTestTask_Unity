@@ -16,6 +16,6 @@ public class CardsScriptableObject : ScriptableObject
 
     public Sprite GetCardSprite(CardInfo cardInfo)
     {
-        return cardInfos.Find(c => c.CardInfo.CardSuit == cardInfo.CardSuit && c.CardInfo.CardType == cardInfo.CardType).CardSprite;
+        return cardInfos.Find(c => c.CardInfo.CardSuit == cardInfo.CardSuit && c.CardInfo.CardRank == cardInfo.CardRank).CardSprite;
     }
 }

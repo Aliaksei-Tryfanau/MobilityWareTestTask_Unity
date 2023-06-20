@@ -15,209 +15,209 @@ MonoBehaviour:
   cardInfos:
   - CardInfo:
       CardSuit: 1
-      CardType: 1
+      CardRank: 1
     CardSprite: {fileID: 21300000, guid: 82dfbd04749324e84b8e25762e674b63, type: 3}
   - CardInfo:
-      CardSuit: 2
-      CardType: 1
+      CardSuit: 1
+      CardRank: 2
     CardSprite: {fileID: 21300000, guid: 34fe7cef45d9f464585b75dd301e315d, type: 3}
   - CardInfo:
-      CardSuit: 3
-      CardType: 1
+      CardSuit: 1
+      CardRank: 3
     CardSprite: {fileID: 21300000, guid: a59c9d54e0a6f409bad5555961e5d462, type: 3}
   - CardInfo:
-      CardSuit: 4
-      CardType: 1
+      CardSuit: 1
+      CardRank: 4
     CardSprite: {fileID: 21300000, guid: 66b486f9ecee940ee82a0bfd0d2239b1, type: 3}
   - CardInfo:
-      CardSuit: 5
-      CardType: 1
+      CardSuit: 1
+      CardRank: 5
     CardSprite: {fileID: 21300000, guid: 4593b5a7d13244ef3964e22593b5b9b9, type: 3}
   - CardInfo:
-      CardSuit: 6
-      CardType: 1
+      CardSuit: 1
+      CardRank: 6
     CardSprite: {fileID: 21300000, guid: 4b3cdd9aecc044778b12baa466498ea1, type: 3}
   - CardInfo:
-      CardSuit: 7
-      CardType: 1
+      CardSuit: 1
+      CardRank: 7
     CardSprite: {fileID: 21300000, guid: 4ce449b367c8144a39dfd18a99cf70bf, type: 3}
   - CardInfo:
-      CardSuit: 8
-      CardType: 1
+      CardSuit: 1
+      CardRank: 8
     CardSprite: {fileID: 21300000, guid: a53707bfc920e4ada9bd9dfa379b0f8e, type: 3}
   - CardInfo:
-      CardSuit: 9
-      CardType: 1
+      CardSuit: 1
+      CardRank: 9
     CardSprite: {fileID: 21300000, guid: 624453c454a3f429e8faf3dc761e4365, type: 3}
   - CardInfo:
-      CardSuit: 10
-      CardType: 1
+      CardSuit: 1
+      CardRank: 10
     CardSprite: {fileID: 21300000, guid: 1ed7866fcba694aeeb7f90a6d409d638, type: 3}
   - CardInfo:
-      CardSuit: 11
-      CardType: 1
+      CardSuit: 1
+      CardRank: 11
     CardSprite: {fileID: 21300000, guid: 4c483eb8c1f754ceba430c26d1bb57d9, type: 3}
   - CardInfo:
-      CardSuit: 12
-      CardType: 1
+      CardSuit: 1
+      CardRank: 12
     CardSprite: {fileID: 21300000, guid: 6557108c40b4d424281eac09edacb02f, type: 3}
   - CardInfo:
-      CardSuit: 13
-      CardType: 1
+      CardSuit: 1
+      CardRank: 13
     CardSprite: {fileID: 21300000, guid: ce66bb28ac75749728de3ec453b94341, type: 3}
   - CardInfo:
-      CardSuit: 1
-      CardType: 2
+      CardSuit: 2
+      CardRank: 1
     CardSprite: {fileID: 21300000, guid: c85872889d8d14b3d8ca821220a0e17f, type: 3}
   - CardInfo:
       CardSuit: 2
-      CardType: 2
+      CardRank: 2
     CardSprite: {fileID: 21300000, guid: 32e25e38874b644d485cc3ea5e794408, type: 3}
   - CardInfo:
-      CardSuit: 3
-      CardType: 2
+      CardSuit: 2
+      CardRank: 3
     CardSprite: {fileID: 21300000, guid: 4f37b8944de744eeaaceac635e869270, type: 3}
   - CardInfo:
-      CardSuit: 4
-      CardType: 2
+      CardSuit: 2
+      CardRank: 4
     CardSprite: {fileID: 21300000, guid: c827b9c2d703340209caf7099ab844e2, type: 3}
   - CardInfo:
-      CardSuit: 5
-      CardType: 2
+      CardSuit: 2
+      CardRank: 5
     CardSprite: {fileID: 21300000, guid: 4a6151443026e428ba97572fd8c2274f, type: 3}
   - CardInfo:
-      CardSuit: 6
-      CardType: 2
+      CardSuit: 2
+      CardRank: 6
     CardSprite: {fileID: 21300000, guid: dae21370af7874a2fbde7a29a6d8c783, type: 3}
   - CardInfo:
-      CardSuit: 7
-      CardType: 2
+      CardSuit: 2
+      CardRank: 7
     CardSprite: {fileID: 21300000, guid: 8ea737e515e604cdeb2fb020999008d9, type: 3}
   - CardInfo:
-      CardSuit: 8
-      CardType: 2
+      CardSuit: 2
+      CardRank: 8
     CardSprite: {fileID: 21300000, guid: 86adaaaf2ebbd41c7b473214c3e7d8ab, type: 3}
   - CardInfo:
-      CardSuit: 9
-      CardType: 2
+      CardSuit: 2
+      CardRank: 9
     CardSprite: {fileID: 21300000, guid: 4b0f8658fecee46fc9205ba1da828ec4, type: 3}
   - CardInfo:
-      CardSuit: 10
-      CardType: 2
+      CardSuit: 2
+      CardRank: 10
     CardSprite: {fileID: 21300000, guid: c57fa278e25574ff9a0d87ba16deb796, type: 3}
   - CardInfo:
-      CardSuit: 11
-      CardType: 2
+      CardSuit: 2
+      CardRank: 11
     CardSprite: {fileID: 21300000, guid: 75e203b7f9f3048e593a2ab4da854ae4, type: 3}
   - CardInfo:
-      CardSuit: 12
-      CardType: 2
+      CardSuit: 2
+      CardRank: 12
     CardSprite: {fileID: 21300000, guid: 896d764f132ef43688eb605062b9ec2d, type: 3}
   - CardInfo:
-      CardSuit: 13
-      CardType: 2
+      CardSuit: 2
+      CardRank: 13
     CardSprite: {fileID: 21300000, guid: 360d7ffe570f04eb6a0c637e7c5ad33e, type: 3}
   - CardInfo:
-      CardSuit: 1
-      CardType: 3
+      CardSuit: 3
+      CardRank: 1
     CardSprite: {fileID: 21300000, guid: 711e156a545704808973a592e431319a, type: 3}
   - CardInfo:
-      CardSuit: 2
-      CardType: 3
+      CardSuit: 3
+      CardRank: 2
     CardSprite: {fileID: 21300000, guid: efe21e5cfe086447bba6107028174540, type: 3}
   - CardInfo:
       CardSuit: 3
-      CardType: 3
+      CardRank: 3
     CardSprite: {fileID: 21300000, guid: 452311b643f394783a984e957809d8a1, type: 3}
   - CardInfo:
-      CardSuit: 4
-      CardType: 3
+      CardSuit: 3
+      CardRank: 4
     CardSprite: {fileID: 21300000, guid: 718530b9b64b0480e8e022975d1ae836, type: 3}
   - CardInfo:
-      CardSuit: 5
-      CardType: 3
+      CardSuit: 3
+      CardRank: 5
     CardSprite: {fileID: 21300000, guid: 95001cf5057e648d7b9c2dedec2108fb, type: 3}
   - CardInfo:
-      CardSuit: 6
-      CardType: 3
+      CardSuit: 3
+      CardRank: 6
     CardSprite: {fileID: 21300000, guid: 35a790c791d7d4268b14b4efa48bdf13, type: 3}
   - CardInfo:
-      CardSuit: 7
-      CardType: 3
+      CardSuit: 3
+      CardRank: 7
     CardSprite: {fileID: 21300000, guid: 42a6817d772ae415cb06824080963982, type: 3}
   - CardInfo:
-      CardSuit: 8
-      CardType: 3
+      CardSuit: 3
+      CardRank: 8
     CardSprite: {fileID: 21300000, guid: 3c7333b3b82be4aed91b565f2b3fc317, type: 3}
   - CardInfo:
-      CardSuit: 9
-      CardType: 3
+      CardSuit: 3
+      CardRank: 9
     CardSprite: {fileID: 21300000, guid: 13f9a52df0c3f46cf82d9a94c6605ed2, type: 3}
   - CardInfo:
-      CardSuit: 10
-      CardType: 3
+      CardSuit: 3
+      CardRank: 10
     CardSprite: {fileID: 21300000, guid: ea774963fc3514485b0be4f2220e2c2d, type: 3}
   - CardInfo:
-      CardSuit: 11
-      CardType: 3
+      CardSuit: 3
+      CardRank: 11
     CardSprite: {fileID: 21300000, guid: 1aafba1a1931e4cfeb3f8d936740a00f, type: 3}
   - CardInfo:
-      CardSuit: 12
-      CardType: 3
+      CardSuit: 3
+      CardRank: 12
     CardSprite: {fileID: 21300000, guid: f2dfd0d98c8fd4eb8a36f0e9138f5969, type: 3}
   - CardInfo:
-      CardSuit: 13
-      CardType: 3
+      CardSuit: 3
+      CardRank: 13
     CardSprite: {fileID: 21300000, guid: 3ca84386021114f9f96bb4505a2ebe55, type: 3}
   - CardInfo:
-      CardSuit: 1
-      CardType: 4
+      CardSuit: 4
+      CardRank: 1
     CardSprite: {fileID: 21300000, guid: 445a0445c4c054ea3a64d411707478a2, type: 3}
   - CardInfo:
-      CardSuit: 2
-      CardType: 4
+      CardSuit: 4
+      CardRank: 2
     CardSprite: {fileID: 21300000, guid: aea88e5e1646d49018a53ebd8780bc78, type: 3}
   - CardInfo:
-      CardSuit: 3
-      CardType: 4
+      CardSuit: 4
+      CardRank: 3
     CardSprite: {fileID: 21300000, guid: ba1dc8511809343d39407a1c77cc6a50, type: 3}
   - CardInfo:
       CardSuit: 4
-      CardType: 4
+      CardRank: 4
     CardSprite: {fileID: 21300000, guid: 710e860d4e0e0443ab0c04499dbde5cd, type: 3}
   - CardInfo:
-      CardSuit: 5
-      CardType: 4
+      CardSuit: 4
+      CardRank: 5
     CardSprite: {fileID: 21300000, guid: 698a2ce4db15d4eeab6f0dc94ea3ec99, type: 3}
   - CardInfo:
-      CardSuit: 6
-      CardType: 4
+      CardSuit: 4
+      CardRank: 6
     CardSprite: {fileID: 21300000, guid: 7d5c91368400b40d6b8f87058ff8a6f0, type: 3}
   - CardInfo:
-      CardSuit: 7
-      CardType: 4
+      CardSuit: 4
+      CardRank: 7
     CardSprite: {fileID: 21300000, guid: c86bf69f8c8e64a3cb16d09f82d21edd, type: 3}
   - CardInfo:
-      CardSuit: 8
-      CardType: 4
+      CardSuit: 4
+      CardRank: 8
     CardSprite: {fileID: 21300000, guid: 94779e03c63fe4b0897666b415be55e4, type: 3}
   - CardInfo:
-      CardSuit: 9
-      CardType: 4
+      CardSuit: 4
+      CardRank: 9
     CardSprite: {fileID: 21300000, guid: 82731a8e6672f4c1f99b3842b1cac6ec, type: 3}
   - CardInfo:
-      CardSuit: 10
-      CardType: 4
+      CardSuit: 4
+      CardRank: 10
     CardSprite: {fileID: 21300000, guid: de2420b8153824c38978eb3a80c1cf1c, type: 3}
   - CardInfo:
-      CardSuit: 11
-      CardType: 4
+      CardSuit: 4
+      CardRank: 11
     CardSprite: {fileID: 21300000, guid: 858862e725369414fada76911b330f8a, type: 3}
   - CardInfo:
-      CardSuit: 12
-      CardType: 4
+      CardSuit: 4
+      CardRank: 12
     CardSprite: {fileID: 21300000, guid: cf950ce6a931c49cf84df01b8419935b, type: 3}
   - CardInfo:
-      CardSuit: 13
-      CardType: 4
+      CardSuit: 4
+      CardRank: 13
     CardSprite: {fileID: 21300000, guid: 4fcfa9a6cef8f449eb547712ea84ecc4, type: 3}

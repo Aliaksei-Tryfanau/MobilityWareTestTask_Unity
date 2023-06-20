@@ -1,4 +1,4 @@
-public enum CardSuits
+public enum CardRanks
 {
     None = 0,
     Ace = 1,

@@ -6,13 +6,13 @@ using Random = UnityEngine.Random;
 [Serializable]
 public struct CardInfo
 {
-    public CardSuits CardSuit;
-    public CardTypes CardType;
+    public CardSuites CardSuit;
+    public CardRanks CardRank;
 
-    public CardInfo(CardSuits cardSuit, CardTypes cardType)
+    public CardInfo(CardSuites cardSuit, CardRanks cardRank)
     {
         CardSuit = cardSuit;
-        CardType = cardType;
+        CardRank = cardRank;
     }
 }
 public class GameManager : MonoBehaviour
@@ -80,21 +80,21 @@ public class GameManager : MonoBehaviour
     {
         _cardDeck.Clear();
 
-        foreach (CardSuits cardSuit in Enum.GetValues(typeof(CardSuits)))
+        foreach (CardSuites cardSuit in Enum.GetValues(typeof(CardSuites)))
 		{
-			if (cardSuit == CardSuits.None)
+			if (cardSuit == CardSuites.None)
 			{
 				continue;
 			}
 
-			foreach (CardTypes cardType in Enum.GetValues(typeof(CardTypes)))
+			foreach (CardRanks cardRank in Enum.GetValues(typeof(CardRanks)))
 			{
-				if (cardType == CardTypes.None)
+				if (cardRank == CardRanks.None)
 				{
 					continue;
 				}
 
-				_cardDeck.Add(new CardInfo(cardSuit, cardType));
+				_cardDeck.Add(new CardInfo(cardSuit, cardRank));
             }
 		}
     }

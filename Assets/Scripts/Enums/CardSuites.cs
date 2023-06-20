@@ -1,4 +1,4 @@
-public enum CardTypes
+public enum CardSuites
 {
     None = 0,
     Spades = 1,

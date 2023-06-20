@@ -16,22 +16,22 @@ public class CardsScriptableObjectEditor : Editor
             var cardsSO = target as CardsScriptableObject;
             cardsSO.cardInfos.Clear();
 
-            foreach (CardTypes cardType in Enum.GetValues(typeof(CardTypes)))
+            foreach (CardSuites cardSuit in Enum.GetValues(typeof(CardSuites)))
             {
-                if (cardType == CardTypes.None)
+                if (cardSuit == CardSuites.None)
                 {
                     continue;
                 }
 
-                foreach (CardSuits cardSuit in Enum.GetValues(typeof(CardSuits)))
+                foreach (CardRanks cardRank in Enum.GetValues(typeof(CardRanks)))
                 {
-                    if (cardSuit == CardSuits.None)
+                    if (cardRank == CardRanks.None)
                     {
                         continue;
                     }
 
                     CardScriptableInfo cardToAdd = new CardScriptableInfo();
-                    cardToAdd.CardInfo = new CardInfo(cardSuit, cardType);
+                    cardToAdd.CardInfo = new CardInfo(cardSuit, cardRank);
                     cardsSO.cardInfos.Add(cardToAdd);
                 }
             }
