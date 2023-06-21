@@ -88,7 +88,7 @@ public class UIManager : MonoBehaviour
 
         for (int i = 0; i < _cardControllers.Length; i++)
 		{
-			if (_cardControllers[i].IsHold)
+			if (!_cardControllers[i].IsHold)
 			{
 				indexes.Add(i);
 			}

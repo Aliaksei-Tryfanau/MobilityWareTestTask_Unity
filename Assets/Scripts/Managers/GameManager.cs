@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.XR;
 using Random = UnityEngine.Random;
 
 [Serializable]
@@ -169,11 +171,10 @@ public class GameManager : MonoBehaviour
         }
 
 		HandTypes handCombination = GetHandCombination();
-		int reward = 0;
 
 		if (handCombination != HandTypes.None)
 		{
-			reward = _combinationsRewardsSO.GetRewardValue(handCombination) * _currentBet;
+			int reward = _combinationsRewardsSO.GetRewardValue(handCombination) * _currentBet;
             CurrentCredit += reward;
             EventHandResolved.Invoke(reward, _combinationsRewardsSO.GetRewardText(handCombination));
         }
@@ -189,7 +190,84 @@ public class GameManager : MonoBehaviour
 
 	private HandTypes GetHandCombination()
 	{
+        //CurrentHand = new List<CardInfo>
+        //{
+        //    new CardInfo(CardSuites.Clubs, CardRanks.Two),
+        //    new CardInfo(CardSuites.Clubs, CardRanks.Three),
+        //    new CardInfo(CardSuites.Diamonds, CardRanks.Jack),
+        //    new CardInfo(CardSuites.Hearts, CardRanks.Jack),
+        //    new CardInfo(CardSuites.Spades, CardRanks.Queen)
+        //};
 
-		return HandTypes.None;
+        bool isFlush = CurrentHand.GroupBy(c => c.CardSuit).Count() == 1;
+
+        bool isRoyalFlush = isFlush &&
+               CurrentHand.Exists(c => c.CardRank == CardRanks.Ace) &&
+               CurrentHand.Exists(c => c.CardRank == CardRanks.King) &&
+               CurrentHand.Exists(c => c.CardRank == CardRanks.Queen) &&
+               CurrentHand.Exists(c => c.CardRank == CardRanks.Jack) &&
+               CurrentHand.Exists(c => c.CardRank == CardRanks.Ten);
+
+        if (isRoyalFlush)
+        {
+            return HandTypes.RoyalFlush;
+        }
+
+        var ranks = CurrentHand.Select(c => c.CardRank);
+        List<CardRanks> uniqueRanks = ranks.Distinct().ToList();
+        uniqueRanks.Sort();
+        bool isStraight = uniqueRanks.Count == 5 && 
+            ((uniqueRanks[4] - uniqueRanks[0] == 4) ||
+            (
+               CurrentHand.Exists(c => c.CardRank == CardRanks.Ace) &&
+               CurrentHand.Exists(c => c.CardRank == CardRanks.Two) &&
+               CurrentHand.Exists(c => c.CardRank == CardRanks.Three) &&
+               CurrentHand.Exists(c => c.CardRank == CardRanks.Four) &&
+               CurrentHand.Exists(c => c.CardRank == CardRanks.Five)
+            ));
+
+        if (isFlush && isStraight)
+        {
+            return HandTypes.StraightFlush;
+        }
+
+        var rankGroups = CurrentHand.GroupBy(card => card.CardRank);
+
+        if (rankGroups.Any(g => g.Count() == 4))
+        {
+            return HandTypes.FourOfAKind;
+        }
+
+        if (rankGroups.Count() == 2 && rankGroups.Any(g => g.Count() == 3) && rankGroups.Any(g => g.Count() == 2))
+        {
+            return HandTypes.FullHouse;
+        }
+
+        if (isFlush)
+        {
+            return HandTypes.Flush;
+        }
+
+        if (isStraight)
+        {
+            return HandTypes.Straight;
+        }
+
+        if (rankGroups.Any(g => g.Count() == 3))
+        {
+            return HandTypes.ThreeOfAKind;
+        }
+
+        if (rankGroups.Count(g => g.Count() == 2) == 2)
+        {
+            return HandTypes.TwoPair;
+        }
+
+        if (rankGroups.Any(g => g.Count() == 2 && g.Key >= CardRanks.Jack))
+        {
+            return HandTypes.JacksOrBetter;
+        }
+
+        return HandTypes.None;
 	}
 }
